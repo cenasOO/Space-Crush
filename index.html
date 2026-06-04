@@ -6,71 +6,65 @@
     <title>Space Crush - Jogo de Puzzle Match-3</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Reset básico e fundo temático espacial */
+        /* Cores pastéis e fundo fofinho */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
-            font-family: 'Poppins', Arial, sans-serif; 
-            background: radial-gradient(circle at center, #1b112c 0%, #0a0614 100%);
-            color: #f1f1f6; 
-            padding: 60px 20px; 
-            line-height: 1.7; 
+            font-family: 'Quicksand', Arial, sans-serif; 
+            background: linear-gradient(135deg, #ffdee9 0%, #b5fffc 100%);
+            color: #5d4d7a; 
+            padding: 50px 20px; 
+            line-height: 1.6; 
         }
 
-        /* Container principal com efeito translúcido (Glassmorphism) */
+        /* Container principal arredondado e branquinho */
         .container { 
-            max-width: 850px; 
+            max-width: 800px; 
             margin: 0 auto; 
-            background: rgba(25, 18, 41, 0.75); 
-            padding: 45px; 
-            border-radius: 20px; 
-            border: 1px solid rgba(250, 92, 92, 0.2);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(250, 92, 92, 0.05); 
-            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.92); 
+            padding: 40px; 
+            border-radius: 30px; 
+            border: 4px solid #fff;
+            box-shadow: 0 12px 28px rgba(255, 182, 193, 0.4);
         }
 
-        /* Cabeçalho estilizado do jogo */
+        /* Título super alegre */
         h1 { 
-            font-family: 'Orbitron', sans-serif;
-            color: #fa5c5c; 
-            font-size: 3.5rem; 
+            font-family: 'Fredoka', sans-serif;
+            color: #ff6b8b; 
+            font-size: 3.8rem; 
             text-align: center; 
-            margin-bottom: 25px; 
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 0 20px rgba(250, 92, 92, 0.6);
-            font-weight: 800;
+            margin-bottom: 15px; 
+            text-shadow: 2px 2px 0px #fff, 4px 4px 0px #ffe3e9;
+            font-weight: 700;
         }
 
         .introducao {
             font-size: 1.2rem;
-            color: #d1cbdc;
+            color: #6c5a89;
             text-align: center;
-            margin-bottom: 40px;
-            font-weight: 300;
+            margin-bottom: 35px;
+            font-weight: 500;
         }
         
         .introducao strong {
-            color: #fff;
-            text-shadow: 0 0 10px rgba(255,255,255,0.2);
+            color: #ff527b;
         }
 
         h2 { 
-            font-family: 'Orbitron', sans-serif;
-            color: #ff8585; 
-            font-size: 1.5rem; 
-            border-left: 4px solid #fa5c5c;
-            padding-left: 15px; 
-            margin-top: 45px; 
+            font-family: 'Fredoka', sans-serif;
+            color: #ff6b8b; 
+            font-size: 1.8rem; 
+            margin-top: 40px; 
             margin-bottom: 20px;
-            letter-spacing: 1px;
+            text-align: center;
         }
 
-        p { font-size: 1.1rem; color: #c3bcd0; margin-bottom: 20px; }
+        p { font-size: 1.1rem; color: #6c5a89; margin-bottom: 20px; }
         
-        /* Grid de recursos em blocos modernos */
+        /* Grid de recursos em formato de cards fofos */
         .features-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -80,50 +74,60 @@
 
         @media (max-width: 600px) {
             .features-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 2.5rem; }
-            .container { padding: 25px; }
+            h1 { font-size: 2.8rem; }
+            .container { padding: 20px; }
         }
 
         .feature-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 12px;
-            transition: transform 0.3s, border-color 0.3s;
+            background: #fff;
+            border: 2px solid #fff3f5;
+            padding: 22px;
+            border-radius: 20px;
+            box-shadow: 0 6px 12px rgba(255, 107, 139, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .feature-card:hover {
-            transform: translateY(-3px);
-            border-color: rgba(250, 92, 92, 0.4);
-            background: rgba(255, 255, 255, 0.05);
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(255, 107, 139, 0.12);
         }
 
-        .feature-card strong { color: #fff; display: block; margin-bottom: 5px; font-size: 1.15rem; }
-        .feature-card span { color: #b1a8c3; font-size: 1rem; }
+        .feature-card strong { 
+            color: #ff6b8b; 
+            display: block; 
+            margin-bottom: 8px; 
+            font-size: 1.2rem; 
+            font-family: 'Fredoka', sans-serif;
+        }
         
-        /* Lista simples para requisitos */
+        .feature-card span { 
+            color: #7e6b9e; 
+            font-size: 1rem; 
+        }
+        
+        /* Configuração das bolinhas/ícones da lista de requisitos */
         .requisitos-lista li {
             font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: #c3bcd0;
+            margin-bottom: 12px;
+            color: #6c5a89;
             list-style: none;
-            padding-left: 20px;
+            padding-left: 30px;
             position: relative;
         }
 
         .requisitos-lista li::before {
-            content: "⚡";
+            content: "✨";
             position: absolute;
             left: 0;
             top: 0;
         }
         
-        /* Galeria de imagens lado a lado em telas grandes */
+        /* Galeria com cantos super arredondados */
         .galeria { 
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px; 
-            margin: 40px 0; 
+            margin: 35px 0; 
         }
 
         @media (max-width: 700px) {
@@ -133,43 +137,43 @@
         .galeria img { 
             width: 100%; 
             height: auto; 
-            border-radius: 12px; 
-            box-shadow: 0 8px 25px rgba(0,0,0,0.6); 
-            border: 2px solid rgba(255, 255, 255, 0.1); 
-            transition: transform 0.3s, border-color 0.3s;
+            border-radius: 20px; 
+            box-shadow: 0 8px 20px rgba(108, 90, 137, 0.15); 
+            border: 4px solid #fff;
+            transition: transform 0.3s;
         }
 
         .galeria img:hover {
-            transform: scale(1.03);
-            border-color: #fa5c5c;
+            transform: translateY(-5px);
         }
         
-        /* Botão call-to-action chamativo e moderno */
-        .centro { text-align: center; margin-top: 50px; }
+        /* Botão de download estilo chiclete/fofinho */
+        .centro { text-align: center; margin-top: 45px; }
         
         .botao { 
             display: inline-block; 
-            padding: 18px 55px; 
-            background: linear-gradient(135deg, #fa5c5c 0%, #b83333 100%);
+            padding: 18px 50px; 
+            background: linear-gradient(135deg, #ff6b8b 0%, #ff477e 100%);
             color: white; 
             text-decoration: none; 
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Fredoka', sans-serif;
             font-weight: bold; 
-            font-size: 1.4rem; 
+            font-size: 1.5rem; 
             border-radius: 50px; 
-            letter-spacing: 1px;
-            box-shadow: 0 0 30px rgba(250, 92, 92, 0.4);
+            box-shadow: 0 8px 20px rgba(255, 71, 126, 0.35);
             transition: all 0.3s ease;
+            border-bottom: 4px solid #d93262;
         }
 
         .botao:hover { 
-            transform: translateY(-4px);
-            box-shadow: 0 0 45px rgba(250, 92, 92, 0.7);
-            filter: brightness(1.1);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 26px rgba(255, 71, 126, 0.5);
+            filter: brightness(1.05);
         }
 
         .botao:active {
-            transform: translateY(-1px);
+            transform: translateY(1px);
+            border-bottom: 1px solid #d93262;
         }
     </style>
 </head>
@@ -178,7 +182,7 @@
     <div class="container">
         <h1>SpaceCrush</h1>
         
-        <p class="introducao">Prepare-se para uma explosão de cores e diversão no cosmos! <strong>SpaceCrush</strong> é um puzzle viciante e super carismático no melhor estilo <em>Match-3</em>. Sua missão é simples, deliciosa e muito desafiadora: combinar os elementos certos para criar reações em cadeia incríveis e limpar o tabuleiro!</p>
+        <p class="introducao">Prepare-se para uma explosão de cores e muita fofura no cosmos! <strong>SpaceCrush</strong> é um puzzle viciante e super carismático no melhor estilo <em>Match-3</em>. Sua missão é simples, deliciosa e muito desafiadora: combinar os elementos certos para criar reações em cadeia incríveis e limpar o tabuleiro!</p>
         
         <div class="galeria">
             <img src="print2.jpg" alt="Menu Inicial do Space Crush">
@@ -189,36 +193,36 @@
         <div class="features-grid">
             <div class="feature-card">
                 <strong>Mecânica Clássica e Viciante</strong>
-                <span>O puro estilo Match-3 que todo mundo ama, fácil de compreender e extremamente difícil de largar.</span>
+                <span>O puro estilo Match-3 que todo mundo ama, super fácil de aprender e muito gostoso de jogar!</span>
             </div>
             <div class="feature-card">
                 <strong>Desafios Estratégicos</strong>
-                <span>Cada movimento conta! Planeje suas jogadas no espaço para criar combinações especiais e gerar detonações colossais.</span>
+                <span>Cada movimento conta! Planeje suas jogadas para criar combinações doces e gerar explosões mágicas.</span>
             </div>
             <div class="feature-card">
-                <strong>Visual Colorido e Vibrante</strong>
-                <span>Uma identidade visual linda, brilhante e cheia de efeitos para deixar cada combinação espacial ainda mais satisfatória.</span>
+                <strong>Visual Lindo e Brilhante</strong>
+                <span>Uma identidade visual colorida, fofa e cheia de efeitos fofinhos para deixar cada combinação muito mais satisfatória.</span>
             </div>
             <div class="feature-card">
-                <strong>Ritmo Casual & Relaxante</strong>
-                <span>Jogue no seu próprio tempo de forma singleplayer. É o passatempo perfeito para treinar o raciocínio rápido ou apenas relaxar.</span>
+                <strong>Para Relaxar e se Divertir</strong>
+                <span>Jogue no seu próprio ritmo! É o passatempo perfeito para treinar o raciocínio e esquecer o estresse do dia.</span>
             </div>
         </div>
         
         <h2>🕹️ Como Jogar:</h2>
-        <p>Clique, arraste e alinhe 3 ou mais peças iguais na horizontal ou na vertical para esmagá-las e acumular pontuações altas. Junte 4 ou mais e gere pedras de energia especiais capazes de explodir linhas ou blocos inteiros!</p>
+        <p>Clique, arraste e alinhe 3 ou mais peças iguais na horizontal ou na vertical para estourá-las e marcar muitos pontos. Junte 4 ou mais e crie peças especiais com poderes incríveis de explosão!</p>
         
         <h2>💻 Requisitos do Sistema:</h2>
         <ul class="requisitos-lista">
-            <li><strong>Plataforma:</strong> Compatível com Windows</li>
-            <li><strong>Formato:</strong> Arquivo .ZIP leve (Basta extrair o conteúdo e clicar no executável para começar a jogar de imediato!)</li>
+            <li><strong>Plataforma:</strong> Windows</li>
+            <li><strong>Formato:</strong> Arquivo .ZIP super leve (Basta extrair e abrir o jogo!)</li>
         </ul>
         
         <h2>❤️ Apoie o Desenvolvedor</h2>
-        <p>Este projeto de puzzle espacial foi feito com muito carinho de forma totalmente independente. Ao garantir a sua cópia digital, você apoia diretamente o criador no desenvolvimento de novas atualizações, fases inéditas e futuros jogos. Muito obrigado pela força!</p>
+        <p>Este jogo foi feito de forma independente com muito carinho e dedicação. Garantindo a sua cópia, você ajuda o desenvolvedor a criar novas fases fofas, atualizações e novos joguinhos incríveis. Muito obrigado pelo seu apoio!</p>
         
         <div class="centro">
-            <a href="https://arisedev.itch.io/space-crush" target="_blank" class="botao">BAIXAR NO ITCH.IO</a>
+            <a href="https://arisedev.itch.io/space-crush" target="_blank" class="botao">✨ BAIXAR NO ITCH.IO ✨</a>
         </div>
     </div>
 
